@@ -10,6 +10,16 @@ export const StatisticItem = styled.div`
     background-color: ${props => props.theme.iconColor};
     box-shadow: 0px 0px 5px ${props => props.theme.shadowColor};
     border-radius: 10px;
+    &:hover{
+        background-color: ${props => props.theme.iconColor};
+        color: black;
+        transition: 0.1s;
+    }
+    &:focus{
+        outline: none;   
+    }
+    cursor: pointer;
+    transition: 0.1s;
 `;
 
 export const Icon = styled.div`
@@ -21,6 +31,16 @@ export const Icon = styled.div`
     @media (max-width: 576px)  {
         font-size: ${props => props.theme.textSizeTitle};
     }
+    &:hover{
+        background-color: ${props => props.theme.iconColor};
+        color: black;
+        transition: 0.1s;
+    }
+    &:focus{
+        outline: none;   
+    }
+    cursor: pointer;
+    transition: 0.1s;
 `;
 
 export const Text = styled.span`

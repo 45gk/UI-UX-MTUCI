@@ -1,34 +1,55 @@
 import styled from 'styled-components';
 
-export const StatisticItem = styled.div`
-    aspect-ratio: 1/1;
-    width:100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: ${props => props.theme.iconColor};
-    box-shadow: 0px 0px 5px ${props => props.theme.shadowColor};
+export const CommentItem = styled.div`
     border-radius: 10px;
+    display: block;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-bottom: 10px;
+    height: 100px; /* Set a fixed height */
+    background-color: aqua;
+    box-shadow: 3px 10px 3px ${props => props.theme.shadowColor};
 `;
 
-export const Icon = styled.div`
-    color: ${props => props.theme.accentColor1};
-    font-size: ${props => props.theme.textSizeTitle};
-    @media (max-width: 768px) and (min-width: 576px)  {
-        font-size: ${props => props.theme.textSizeTitle700};
-    }
-    @media (max-width: 576px)  {
-        font-size: ${props => props.theme.textSizeTitle};
-    }
-`;
-
-export const Text = styled.span`
+export const CommentText = styled.div`
+    display: flex;
+    height: 30px;
+    color: black;
+    font-family: 'Roboto';
     font-size: ${props => props.theme.textSizeTextM};
+    align-items: center;
     @media (max-width: 768px) and (min-width: 576px)  {
         font-size: ${props => props.theme.textSizeTextM700};
     }
     @media (max-width: 576px)  {
         font-size: ${props => props.theme.textSizeTextM500};
     }
+`;
+
+export const CommentContent = styled.div`
+    display: flex;
+    justify-content: space-between;   
+    padding: 10px;
+`;
+
+export const UserName = styled.div`
+  display: flex;
+  height: 30px;
+  color: black;
+  font-family: 'Quicksand';
+  font-size: ${props => props.theme.textSizeTextM};
+  align-items: center;
+  @media (max-width: 768px) and (min-width: 576px)  {
+        font-size: ${props => props.theme.textSizeTextM700};
+    }
+    @media (max-width: 576px)  {
+        font-size: ${props => props.theme.textSizeTextM500};
+    }
+`;
+
+export const deleteButton = styled.button`
+    display: flex;
+    flex: 0 0 auto;
+    height: 30px;
+    padding: 5px;
 `;

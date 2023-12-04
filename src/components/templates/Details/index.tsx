@@ -6,6 +6,7 @@ import { VscDesktopDownload, VscStarFull } from "react-icons/vsc";
 import GenreItem from "./GenreItem/GenreItem";
 import StatisticItem from "./StatisticItem/StatisticItem";
 import Torrent from "./TorrentItem";
+import CommentaryItem from "./CommentaryItem/CommentaryItem";
 
 import { AiTwotoneLike } from "react-icons/ai";
 
@@ -20,6 +21,29 @@ const Details = () => {
   if (isLoading) {
     return <Loader />;
   }
+
+  const hardCode_comment1 = () => {
+    return (
+      <CommentaryItem
+        
+        userName = "Игорь"
+        commentText = "Отличный фильм, мне очень понравилось!"
+      />
+      
+      
+    );
+  };
+  const hardCode_comment2 = () => {
+    return (
+      <CommentaryItem
+        
+        userName = "Вася"
+        commentText = "Плохой фильм, неоч!"
+      />
+      
+      
+    );
+  };
 
   const genresList = filmRetrieve?.data.movie.genres.map((value) => {
     return <GenreItem key={value} text={value} />;
@@ -42,6 +66,10 @@ const Details = () => {
         src={filmRetrieve?.data.movie.background_image_original}
       ></Style.BackgroundImage>
       <Style.Content>
+      <Style.ContentTitle>
+          <Link href={"/"}> &lt; </Link>
+        </Style.ContentTitle>
+
         <Style.ContentTitle>
           <Link href={"/"}>Главная/  {filmRetrieve?.data.movie.title}</Link>
         </Style.ContentTitle>
@@ -100,6 +128,9 @@ const Details = () => {
             <Style.Torrents>{torrentsList}</Style.Torrents>
 
             <Style.TorrentsTitle>Коментарии:</Style.TorrentsTitle>
+            <Style.CommentaryItem>{hardCode_comment1()}</Style.CommentaryItem>
+            <Style.CommentaryItem>{hardCode_comment2()}</Style.CommentaryItem>
+            
           </Style.Description>
         </Style.Data>
       </Style.Content>

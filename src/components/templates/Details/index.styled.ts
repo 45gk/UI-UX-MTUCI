@@ -227,5 +227,11 @@ export const Torrents = styled.div`
     grid-gap: 10px;
 `;
 
-
+export const CommentaryItem = styled.div`
+    display: flex;
+    grid-template-columns: 1fr;
+    grid-gap: 10px;
+    font-size: ${props=> props.theme.textSizeTextL};
+    color: ${props=> props.theme.textColor};
+`;
 
