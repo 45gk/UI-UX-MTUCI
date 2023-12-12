@@ -1,0 +1,1 @@
+var commentsStorage = window.localStorage;

@@ -65,13 +65,16 @@ export const ContentTitle = styled.span`
         transition: 0.3s;
         &:hover{
             transition: 0.3s;
-            color: ${props => props.theme.accentColor1};
+            // color: ${props => props.theme.accentColor1};
+            color: purple;
         }
     }
 `;
 
 export const Data = styled.div`
-    display: grid;
+    // display: grid;
+
+    display: flex;
     width: 100%;
     align-items: center;
     align-self: center;
@@ -96,15 +99,16 @@ export const Data = styled.div`
 
 export const BackgroundImage = styled.img`
     position: absolute;
-    top: 0;
+    // top: 0;
     width: 100%;
-    height: 600px;
-    object-fit: cover;
-    opacity: 0.3;
+    height: 100%;
+    // object-fit: cover;
+    // opacity: 0.3;
 `;
 
 export const Image = styled.div`
     display: flex;
+    align-items: center;
     width: 100%;
     height: 100%;
     flex-direction: column;
@@ -167,6 +171,7 @@ export const Description = styled.div`
 export const Title = styled.div`
     display: flex;
     font-size: ${props=> props.theme.textSizeTitle};
+    color: ${props=> props.theme.textColor};
     letter-spacing: 1px;
     font-weight: 500;
 `;
@@ -177,8 +182,8 @@ export const Year = styled.div`
     flex: 0 0 auto;
     font-weight: 600;
     font-size: ${props=> props.theme.textSizeTextL};
-    color: ${props=> props.theme.textColor};
-
+     color: ${props=> props.theme.textColor};
+    // color^ white;
 
 `;
 export const DescriptionFull = styled.div`
@@ -233,5 +238,25 @@ export const CommentaryItem = styled.div`
     grid-gap: 10px;
     font-size: ${props=> props.theme.textSizeTextL};
     color: ${props=> props.theme.textColor};
+`;
+
+export const YourNameLabel = styled.div`
+    display: flex;
+    width: 100%;
+    
+    flex: 0 0 auto;
+    font-weight: 600;
+    font-size: ${props=> props.theme.textSizeTextL};
+    color: ${props=> props.theme.accentColor1};
+`;
+
+export const CommentTextLabel = styled.div`
+    display: flex;
+    width: 100%;
+    flex: 0 0 auto;
+    
+    font-weight: 600;
+    font-size: ${props=> props.theme.textSizeTextL};
+    color: ${props=> props.theme.accentColor1};
 `;
 

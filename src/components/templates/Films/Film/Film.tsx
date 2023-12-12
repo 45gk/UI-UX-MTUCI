@@ -20,6 +20,7 @@ const Film: React.FC<MovieList> = (props) => {
             ></Style.Card1>
 
             <Style.Card2>
+            <Style.Name>{props.title}</Style.Name>
               <Style.Rating>
                 <Style.RatingIcon>
                   <VscStarFull />
@@ -59,11 +60,12 @@ const Film: React.FC<MovieList> = (props) => {
             </Style.Card2>
           </Style.Cards>
 
-          <Style.Name>{props.title}</Style.Name>
+          {/* <Style.Name>{props.title}</Style.Name> */}
 
-          <Style.Text>
+          {/* <Style.Text>
             {props.year} {props.language}
-          </Style.Text>
+          </Style.Text> */}
+          {/* 2023 Unicorn Entertainment */}
         </Style.Content>
       </Link>
     </Style.Film>

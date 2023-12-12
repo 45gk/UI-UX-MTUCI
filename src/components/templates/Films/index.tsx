@@ -1,8 +1,14 @@
 import { useFilmList } from "@/lib/hooks/useFilmList";
+
+import { TfiYoutube } from "react-icons/tfi";
+import { TfiTwitterAlt } from "react-icons/tfi";
+import { IoLogoVk } from "react-icons/io";
+
 import { useState } from "react";
 import Pagination from "../../common/Pagination/Pagination";
 import Film from "./Film/Film";
 import * as Style from "./index.styled";
+import Button from "@/components/common/Button/Button";
 
 const Films = () => {
   const [page, setPage] = useState(1);
@@ -21,6 +27,9 @@ const Films = () => {
   const renderedFilms = slicedFilms.map((film) => {
     return <Film key={film.id} {...film}></Film>;
   })
+  const handleButtonClick = () => {
+    // Ничего не делаем
+  };
 
   if (isLoading) {
     return;
@@ -40,6 +49,27 @@ const Films = () => {
           pageSize={pageSize}
           onPageChange={(page) => setPage(page)}
         />
+        <Style.Buttons>
+        <Button
+            action={handleButtonClick}
+            name={<TfiYoutube />}
+          /> 
+        </Style.Buttons>
+
+        <Style.Buttons>
+        <Button
+            action={handleButtonClick}
+            name={<TfiTwitterAlt />}
+          /> 
+        </Style.Buttons>
+
+        <Style.Buttons>
+        <Button
+            action={handleButtonClick}
+            name={<IoLogoVk />}
+          /> 
+        </Style.Buttons>
+      2023 Unicorn Entertainment
       </Style.Content>
     </Style.Films>
   ) : null;

@@ -80,3 +80,28 @@ export const Buttons = styled.div`
    display:flex;
 `;
 
+export const Text = styled.div`
+    display: flex;
+    align-items: center; 
+    width: 100%;
+    height: 100%;
+    padding: 0px 20px;
+    background-color: ${props => props.theme.backgroundColor};
+    box-sizing: border-box;
+
+    @media (min-width: 1200px){
+        width: 1200px;
+    }
+    @media (max-width: 1200px) and (min-width: 992px)  {
+        width: 100%;
+    }
+    @media (max-width: 992px) and (min-width: 768px)  {
+        width: 100%;
+    }
+    @media (max-width: 768px) and (min-width: 576px)  {     
+        width: 100%;
+    }
+    @media (max-width: 576px)  {   
+        width: 100%;
+    }
+`;

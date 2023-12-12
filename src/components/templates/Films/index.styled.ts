@@ -87,3 +87,12 @@ export const List = styled.div`
         grid-template-columns: 1fr 1fr ;
     }
 `;
+
+export const Buttons = styled.div`
+    display:flex;
+    // position: fixed;
+    // display: grid;
+    // grid-template-columns: repeat(3, 1fr); 
+    right: 20vh;
+    
+`;
