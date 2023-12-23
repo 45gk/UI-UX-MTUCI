@@ -5,6 +5,7 @@ import { useRouter } from "next/router";
 import { VscDesktopDownload, VscStarFull } from "react-icons/vsc";
 import GenreItem from "./GenreItem/GenreItem";
 import StatisticItem from "./StatisticItem/StatisticItem";
+// import VideoPlayer from "./YouTubeItem/VideoPlayer";
 import Torrent from "./TorrentItem";
 import CommentaryItem from "./CommentaryItem/CommentaryItem";
 
@@ -54,19 +55,6 @@ const Details = () => {
     return <Loader />;
   }
 
-  // const hardCode_comment1 = () => {
-  //   return (
-  //     <CommentaryItem
-  //       fi
-  //       userName = "Игорь"
-  //       commentText = "Отличный фильм, мне очень понравилось!"
-  //     />
-      
-      
-  //   );
-  // };
-
-
   const genresList = filmRetrieve?.data.movie.genres.map((value) => {
     return <GenreItem key={value} text={value} />;
   });
@@ -94,8 +82,8 @@ const Details = () => {
       event.preventDefault();
       const newComment: CommentProps = {
         film_id: comments.length + 1,
-        userName: "User " + userName,
-        commentText: "Wrote: " + commentText
+        userName: "Пользователь " + userName,
+        commentText: commentText
       };
       setComments([...comments, newComment]);
       setUserName('');
@@ -128,11 +116,11 @@ const Details = () => {
     return(
     <div>
       <form onSubmit={addComment}>
-              <Style.YourNameLabel>Your Name:</Style.YourNameLabel>
+              <Style.YourNameLabel>Ваше имя:</Style.YourNameLabel>
                 <input className="name_form_control" type="text" value={userName} onChange={handleUserNameChange} />
-            <Style.CommentTextLabel>Your Comment:</Style.CommentTextLabel>
+            <Style.CommentTextLabel>Ваш комментарий</Style.CommentTextLabel>
                 <textarea className="comment_form_control" value={commentText} onChange={(e) => handleCommentTextChange(e)}/>
-            <Button type="submit">Add comment</Button>
+            <Button type="submit">Оставить комментарий</Button>
         </form>
         {commentItems}
     </div>
@@ -143,78 +131,101 @@ const Details = () => {
     <Style.Details>
       <Style.BackgroundImage
         // src={filmRetrieve?.data.movie.background_image_original}
-        src = "https://svgx.ru/svg/1289544.svg"
+        src = "https://i-fotok.ru/images/belyy-gradient/belyy-gradient_10.jpeg"
       ></Style.BackgroundImage>
+      
       <Style.Content>
-      <Style.ContentTitle>
-          <Link href={"/"}> &lt; Назад</Link>
+        <Style.ContentTitle>
+                  <Link href={"/"}> &lt; Назад</Link>
         </Style.ContentTitle>
+      
 
         {/* <Style.ContentTitle>
           <Link href={"/"}>Главная/  {filmRetrieve?.data.movie.title}</Link>
         </Style.ContentTitle> */}
 
         <Style.Data>
-          {/* <Style.Image> */}
-            {/* <Style.Img
+        
+
+          <Style.Image> 
+             <Style.Img
               src={filmRetrieve?.data.movie.large_cover_image}
-            ></Style.Img> */}
-            {/* <Style.Buttons>
+            ></Style.Img>
+             {/* <Style.Buttons>
               <Style.DownloadButton href={filmRetrieve?.data.movie.url}>
                 Скачать
               </Style.DownloadButton>
               <Style.WatchButton href={filmRetrieve?.data.movie.url}>
                 Смотреть онлайн
               </Style.WatchButton>
-            </Style.Buttons>
-          </Style.Image> */}
+            </Style.Buttons> */}
+          </Style.Image>
 
           <Style.Description>
-              <Style.Img
+            <Style.SuperTitle>{filmRetrieve?.data.movie.title}</Style.SuperTitle>
+              {/* <Style.Img
                 src={filmRetrieve?.data.movie.large_cover_image}
                 // onError={handleError}
-              ></Style.Img>
+              ></Style.Img> */}
+            {filmRetrieve?.data.movie.slug}
+              
 
-            <Style.Title>{filmRetrieve?.data.movie.title}</Style.Title>
+            <Style.Title>Подробная информация о фильме:</Style.Title>
             
+            <Style.LitTitle>{"Рейтинг: " + filmRetrieve?.data.movie.rating}</Style.LitTitle>
             <Style.Year>
-            {filmRetrieve?.data.movie.rating+ "          " +
-             filmRetrieve?.data.movie.year +
-                "          " +
-                filmRetrieve?.data.movie.language}
+            {"Год выпуска: " +
+             filmRetrieve?.data.movie.year}
+                
             </Style.Year>
+            <Style.LitTitle>{"Возрастной рейтинг: " +filmRetrieve?.data.movie.mpa_rating}</Style.LitTitle>
+            <Style.LitTitle>{"Язык озвучки: " +filmRetrieve?.data.movie.language}</Style.LitTitle>
+            <Style.LitTitle>{"Субтитры: " +filmRetrieve?.data.movie.language}</Style.LitTitle>
+            <Style.LitTitle>{"Время: "+filmRetrieve?.data.movie.runtime + " минут"}</Style.LitTitle>
             
+            
+            
+
             <Style.Title>Категории</Style.Title>
             <Style.Genres>{genresList}</Style.Genres>
             <Style.Title>Описание:</Style.Title>
             <Style.DescriptionFull>
               {filmRetrieve?.data.movie.description_full}
             </Style.DescriptionFull>
+            
 
-            <Style.Statistic>
+            <Style.Title>Подробная статистика:</Style.Title>
+            {/* <Style.Statistic>
               <StatisticItem
                 icon={<VscStarFull />}
-                text={filmRetrieve?.data.movie.rating}
+                text={"Рейтинг: "+filmRetrieve?.data.movie.rating}
               ></StatisticItem>
               <StatisticItem
                 icon={<AiTwotoneLike />}
-                text={filmRetrieve?.data.movie.like_count}
+                text={"Лайков: "+filmRetrieve?.data.movie.like_count}
               ></StatisticItem>
               <StatisticItem
                 icon={<BiTimeFive />}
-                text={filmRetrieve?.data.movie.runtime}
+                text={"Время: "+filmRetrieve?.data.movie.runtime}
               ></StatisticItem>
               <StatisticItem
                 icon={<VscDesktopDownload />}
-                text={filmRetrieve?.data.movie.download_count}
+                text={"Загрузок: "+filmRetrieve?.data.movie.download_count}
               ></StatisticItem>
-            </Style.Statistic>
+            </Style.Statistic> */}
 
             <Style.Title>Загрузки:</Style.Title>
+            <Style.DescriptionFull>
+              {/* Наш сервис позволяет смотреть фильмы не только онлайн, но и даёт возможность Вам смотреть его на своём устройстве даже без подключения к сети. Для этого, скачайте фильм на ваше устройство. */}
+            </Style.DescriptionFull>
 
             <Style.Torrents>{torrentsList}</Style.Torrents>
+            
+            <Style.Title> </Style.Title>
+            <Style.Title> </Style.Title>
+            <Style.Title> </Style.Title>
 
-            <Style.Title>Коментарии:</Style.Title>
+            <Style.Title>Присоединяйтесь к обсуждению фильма!</Style.Title>
             {/* <form >
               <label>
                 Имя:
@@ -225,8 +236,11 @@ const Details = () => {
 
 
             {/* <Style.CommentaryItem>{hardCode_comment1()}</Style.CommentaryItem> */}
-            <Style.CommentaryItem>{commentsList()}</Style.CommentaryItem>
-            2023 Unicorn Entertainment
+            <Style.Comments>
+              <Style.Title>Написать коментарий:</Style.Title>
+              <Style.CommentaryItem>{commentsList()}</Style.CommentaryItem>
+            </Style.Comments>
+            
           </Style.Description>
         </Style.Data>
       

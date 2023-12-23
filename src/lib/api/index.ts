@@ -20,6 +20,11 @@ export type MovieList = {
   large_cover_image: string;
   download_count: number;
   like_count: number;
+  
+  mpa_rating: string;
+  yt_trailer_code:string;
+  slug:string;
+  
   torrents: {
     url: string;
     quality: string;
@@ -52,5 +57,14 @@ export const filmRetrieveQuery = async (id: string) => {
       movie: MovieList;
     };
   }>(`movie_details.json?movie_id=${id}`);
+  return response.data;
+};
+
+export const bestFilmsQuery = async (id: string, pageSize: string) => {
+  const response = await axios.get<{
+    data: {
+      movie: MovieList;
+    };
+  }>(`movie_details.json?sort_by=rating&limit=${5}`);
   return response.data;
 };

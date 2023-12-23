@@ -7,13 +7,13 @@ export const CommentItem = styled.div`
     width: 100%;
     margin-bottom: 10px;
     height: 100px; /* Set a fixed height */
-    background-color: aqua;
+    background-color: #dbd8d0;
     box-shadow: 3px 10px 3px ${props => props.theme.shadowColor};
 `;
 
 export const CommentText = styled.div`
     display: flex;
-    height: 30px;
+    height: 40px;
     color: black;
     font-family: 'Roboto';
     font-size: ${props => props.theme.textSizeTextM};
@@ -36,8 +36,9 @@ export const UserName = styled.div`
   display: flex;
   height: 30px;
   color: black;
-  font-family: 'Quicksand';
-  font-size: ${props => props.theme.textSizeTextM};
+  font-family: 'Roboto';
+  font-size: 20px;
+  font-weigh:
   align-items: center;
   @media (max-width: 768px) and (min-width: 576px)  {
         font-size: ${props => props.theme.textSizeTextM700};

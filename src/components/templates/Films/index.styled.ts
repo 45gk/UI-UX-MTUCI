@@ -4,6 +4,7 @@ export const Films = styled.section`
     display: flex; 
     width: 100%;
     height: 100%;
+    border: none;
     flex: 0 0 auto;
     justify-content: center;
     background-color: ${props => props.theme.bachgroundColor};
@@ -13,10 +14,10 @@ export const Films = styled.section`
 export const Content = styled.div`
     display: flex;
     flex-direction: column;
-    width: 1000px;
-    padding: 0px 20px;
+    width: 100%;
+    padding: 0px 0px;
     margin: 0px 0px;
-    box-sizing: border-box;
+    border: none;
    
     @media (min-width: 1200px){
         width: 1200px;
@@ -43,21 +44,23 @@ export const Content = styled.div`
 
 
 export const Title = styled.span`
+    font-style: 'Times New Roman';
+    text-align: center;
     letter-spacing: 1px;
-    font-weight: 600;
+    font-weight: 900;
     display: flex;
     flex: 0 0 auto;
     width: 100%;
     margin: 50px 0px;
     align-items: center;
     box-sizing: border-box;
-    font-size: ${props => props.theme.textSizeTitle};
-    @media (max-width: 768px) and (min-width: 576px)  {
-        font-size: ${props => props.theme.textSizeTitle700};
-    }
-    @media (max-width: 576px)  {
-        font-size: ${props => props.theme.textSizeTitle500};
-    }
+    font-size: 44px;
+    // @media (max-width: 768px) and (min-width: 576px)  {
+    //     font-size: ${props => props.theme.textSizeTitle700};
+    // }
+    // @media (max-width: 576px)  {
+    //     font-size: ${props => props.theme.textSizeTitle500};
+    // }
 `;
 
 export const List = styled.div`
@@ -69,8 +72,8 @@ export const List = styled.div`
     grid-gap: 20px;
     border-top: 1px solid ${props => props.theme.accentColor1};
     border-bottom: 1px solid ${props => props.theme.accentColor1};
-    padding: 20px 0px;
-    box-sizing: border-box; 
+    padding: 0px 0px;
+    border: none;
     @media (min-width: 1200px){
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     }

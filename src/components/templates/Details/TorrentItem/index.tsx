@@ -1,5 +1,7 @@
 import { VscSave, VscSymbolFile, VscVm } from "react-icons/vsc";
 import * as Style from "./index.styled";
+import { IoArrowDownOutline } from "react-icons/io5";
+import { IoBrowsersOutline } from "react-icons/io5";
 
 type TorrentProps = {
   href: string;
@@ -12,7 +14,7 @@ const Torrent: React.FC<TorrentProps> = (props) => {
     <Style.Torrent href={props.href}>
       <Style.Content>
         <Style.Icon>
-          <VscVm />
+          <IoBrowsersOutline /> 
         </Style.Icon>
         <Style.Text>{props.quality}</Style.Text>
       </Style.Content>
@@ -24,7 +26,7 @@ const Torrent: React.FC<TorrentProps> = (props) => {
       </Style.Content>
       <Style.Content>
         <Style.Icon>
-          <VscSave />
+          <IoArrowDownOutline />
         </Style.Icon>
         <Style.Text>{props.size}</Style.Text>
       </Style.Content>

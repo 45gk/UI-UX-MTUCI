@@ -65,16 +65,13 @@ export const ContentTitle = styled.span`
         transition: 0.3s;
         &:hover{
             transition: 0.3s;
-            // color: ${props => props.theme.accentColor1};
-            color: purple;
+            color: ${props => props.theme.accentColor1};
         }
     }
 `;
 
 export const Data = styled.div`
-    // display: grid;
-
-    display: flex;
+    display: grid;
     width: 100%;
     align-items: center;
     align-self: center;
@@ -99,16 +96,15 @@ export const Data = styled.div`
 
 export const BackgroundImage = styled.img`
     position: absolute;
-    // top: 0;
+    top: 0;
     width: 100%;
-    height: 100%;
-    // object-fit: cover;
-    // opacity: 0.3;
+    height: 600px;
+    object-fit: cover;
+    opacity: 0.3;
 `;
 
 export const Image = styled.div`
     display: flex;
-    align-items: center;
     width: 100%;
     height: 100%;
     flex-direction: column;
@@ -162,6 +158,7 @@ export const WatchButton = styled(Button)`
 
 export const Description = styled.div`
     display: grid;
+    font-family: "Roboto";
     align-items: flex-start;
     align-self: flex-start;
     grid-template-columns: 1fr;
@@ -171,45 +168,58 @@ export const Description = styled.div`
 export const Title = styled.div`
     display: flex;
     font-size: ${props=> props.theme.textSizeTitle};
-    color: ${props=> props.theme.textColor};
+    color: black;
     letter-spacing: 1px;
-    font-weight: 500;
+    font-weight: 900;
 `;
 
 export const Year = styled.div`
     display: flex;
+    
     width: 100%;
     flex: 0 0 auto;
     font-weight: 600;
     font-size: ${props=> props.theme.textSizeTextL};
-     color: ${props=> props.theme.textColor};
-    // color^ white;
+    color: black;
+
 
 `;
+
+// Можно добавить бокс на бэкграунд описания
 export const DescriptionFull = styled.div`
     display: flex;
+    background-color: white;
+    padding: 10px 10px;
+    box-shadow: 10px 10px 10px ${props => props.theme.shadowColor};
+    font-size: ${props => props.theme.textSizeTextL};
+    border-radius: 10px;
+    background-color: "white";
     font-size: ${props=> props.theme.textSizeTextM};
     line-height: 25px;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
 
 `;
 export const Genres = styled.div`
     display: grid;
     font-size: ${props=> props.theme.textSizeTextM};
-    grid-template-columns: repeat(5,1fr);
+    grid-template-columns: repeat(1,1fr);
     grid-gap:10px;
-    @media (max-width: 768px) and (min-width: 576px)  {
+    width: 200px;
+    @media (max-width: 168px) and (min-width: 76px)  {
         grid-template-columns: 1fr  ;
     }
-    @media (max-width: 576px)  {
+    @media (max-width: 76px)  {
         grid-template-columns: 1fr  ;
     }
 `;
 
 export const Statistic = styled.div`
-    display: grid;
+    display: block;
     grid-template-columns: repeat(6, 1fr);
-    grid-gap:20px;
+    grid-gap:50px;
+    position: fixed;
+    left: 1500px;
+    margin: 100px 100px;
     @media (max-width: 768px) and (min-width: 576px)  {
         grid-template-columns: 1fr 1fr  1fr 1fr;
     }
@@ -220,24 +230,29 @@ export const Statistic = styled.div`
 export const TorrentsTitle = styled.div`
     display: flex;
     width: 100%;
+    text-shadow:  2px 3px 1px rgba(0, 0, 0, 0.75);
     flex: 0 0 auto;
     font-weight: 600;
     font-size: ${props=> props.theme.textSizeTextL};
-    color: ${props=> props.theme.textColor};
+    color: ${props=> props.theme.accentColor1};
 `;
 
 export const Torrents = styled.div`
     display: grid;
     grid-template-columns: 1fr;
     grid-gap: 10px;
+    position: sticky;
 `;
+
+
+
 
 export const CommentaryItem = styled.div`
     display: flex;
     grid-template-columns: 1fr;
     grid-gap: 10px;
     font-size: ${props=> props.theme.textSizeTextL};
-    color: ${props=> props.theme.textColor};
+    color: black;
 `;
 
 export const YourNameLabel = styled.div`
@@ -247,7 +262,7 @@ export const YourNameLabel = styled.div`
     flex: 0 0 auto;
     font-weight: 600;
     font-size: ${props=> props.theme.textSizeTextL};
-    color: ${props=> props.theme.accentColor1};
+    color: black;
 `;
 
 export const CommentTextLabel = styled.div`
@@ -257,6 +272,32 @@ export const CommentTextLabel = styled.div`
     
     font-weight: 600;
     font-size: ${props=> props.theme.textSizeTextL};
-    color: ${props=> props.theme.accentColor1};
+    color: black;
+`;
+
+
+export const Comments = styled.div`
+  {
+    background-color: #f0f0f0; 
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+  }
+  `;
+
+  export const LitTitle = styled.div`
+    display: flex;
+    font-size: ${props=> props.theme.textSizeTextM};
+    color: ${props=> props.theme.textColor};
+    letter-spacing: 1px;
+    font-weight: 500;
+`;
+
+export const SuperTitle = styled.div`
+    display: flex;
+    font-size: ${props => props.theme.textSizeTitle};;
+    color: ${props=> props.theme.textColor};
+    letter-spacing: 1px;
+    font-weight: 500;
 `;
 

@@ -1,4 +1,5 @@
 import { useFilmList } from "@/lib/hooks/useFilmList";
+import { useBestFilmList } from "@/lib/hooks/useBestFilmList";
 
 import { TfiYoutube } from "react-icons/tfi";
 import { TfiTwitterAlt } from "react-icons/tfi";
@@ -15,9 +16,18 @@ const Films = () => {
   const pageSize = 10;
   const { filmList, isLoading } = useFilmList(String(page), String(pageSize));
   
+  const { bestFilms} = useBestFilmList(String(page), String(pageSize));
+  
   const filmsList = filmList?.data.movies.map((film) => {
     return <Film key={film.id} {...film}></Film>;
   });
+
+  // const bestsFilms = bestFilms?.data.movies.map((film1) => {
+  //   return <Film key={film1.id} {...film1}></Film>;
+  // });
+
+
+
   const splitList = filmList?.data.movies || [];
 
   // Получаем первые 5 элементов
@@ -49,27 +59,7 @@ const Films = () => {
           pageSize={pageSize}
           onPageChange={(page) => setPage(page)}
         />
-        <Style.Buttons>
-        <Button
-            action={handleButtonClick}
-            name={<TfiYoutube />}
-          /> 
-        </Style.Buttons>
-
-        <Style.Buttons>
-        <Button
-            action={handleButtonClick}
-            name={<TfiTwitterAlt />}
-          /> 
-        </Style.Buttons>
-
-        <Style.Buttons>
-        <Button
-            action={handleButtonClick}
-            name={<IoLogoVk />}
-          /> 
-        </Style.Buttons>
-      2023 Unicorn Entertainment
+      
       </Style.Content>
     </Style.Films>
   ) : null;

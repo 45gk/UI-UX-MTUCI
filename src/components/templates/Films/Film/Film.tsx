@@ -17,36 +17,38 @@ const Film: React.FC<MovieList> = (props) => {
                   : "https://klike.net/uploads/posts/2019-05/1556708032_1.jpg"
               }
               alt={props.medium_cover_image}
-            ></Style.Card1>
+              >
+              
+            </Style.Card1>
 
             <Style.Card2>
             <Style.Name>{props.title}</Style.Name>
               <Style.Rating>
                 <Style.RatingIcon>
-                  <VscStarFull />
+                  <VscStarFull /> Рейтинг
                 </Style.RatingIcon>
-                <Style.RatingText> {props.rating} / 10</Style.RatingText>
+                <Style.RatingText> {props.rating}</Style.RatingText>
               </Style.Rating>
-
+              Возрастной рейтинг - {props.mpa_rating}
               {props.genres ? (
                 <Style.Genres>
                   {0 in props.genres ? (
                     <Style.GenresText>
-                      {props.genres[0].toUpperCase()}
+                      {props.genres[0]}
                     </Style.GenresText>
                   ) : (
                     ""
                   )}
                   {1 in props.genres ? (
                     <Style.GenresText>
-                      {props.genres[1].toUpperCase()}
+                      {props.genres[1]}
                     </Style.GenresText>
                   ) : (
                     ""
                   )}
                   {2 in props.genres ? (
                     <Style.GenresText>
-                      {props.genres[2].toUpperCase()}
+                      {props.genres[2]}
                     </Style.GenresText>
                   ) : (
                     ""

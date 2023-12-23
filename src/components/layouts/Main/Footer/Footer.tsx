@@ -1,6 +1,10 @@
 import Button from "@/components/common/Button/Button";
 import React from "react";
 
+import { TfiYoutube } from "react-icons/tfi";
+import { TfiTwitterAlt } from "react-icons/tfi";
+import { IoLogoVk } from "react-icons/io";
+
 // import { VscSymbolColor } from "react-icons/vsc";
 import { TfiAlignJustify } from "react-icons/tfi";
 import { IoMdPerson } from "react-icons/io";
@@ -15,16 +19,11 @@ type HeaderProps = {
 const handleButtonClick = () => {
   // Ничего не делаем
 };
-const Header: React.FC<HeaderProps> = (props) => {
+const Footer: React.FC<HeaderProps> = (props) => {
   return (
     <Style.Header id="header">
       <Style.Content>
-      <Style.Buttons>
-          <Button
-            action={handleButtonClick}
-            name={<TfiAlignJustify />}
-          />
-        </Style.Buttons>
+      
         <Style.Logo>
           <Style.Img src="https://svgx.ru/svg/1289544.svg">
             {/* <Link href={"/"}></Link> */}
@@ -33,43 +32,54 @@ const Header: React.FC<HeaderProps> = (props) => {
           </Style.Name>
         </Style.Logo>
         <Style.Text>
-          Главная
+          Лицензия
         </Style.Text>
         <Style.Text>
-          Новости
+          Пользовательское соглашение
         </Style.Text>
         <Style.Text>
-          Календарь новинок
+          Поддержка
         </Style.Text>
         <Style.Text>
-          Лучшее
+          Связаться с нами
         </Style.Text>
-        <Style.Text>
-          О нас
-        </Style.Text>
-        
-        <Style.Subscribe_button>Подписаться</Style.Subscribe_button>
-        
-    
+        <Style.Container>
+          <Style.Img src="http://preview.gentechtreedesign.com/streamlab/red-demo/wp-content/uploads/sites/2/2021/01/2.png">
+          </Style.Img>
+          
+          <Style.Img src="http://preview.gentechtreedesign.com/streamlab/red-demo/wp-content/uploads/sites/2/2021/01/1.png">
+          </Style.Img>
 
+        </Style.Container>
+        
+        
+        
         <Style.Buttons>
           <Button
-            name={<IoMdPerson />}
+            name={<TfiYoutube />}
             action={handleButtonClick}
           />
         </Style.Buttons>
 
         <Style.Buttons>
           <Button
-            name={<WiMoonAltThirdQuarter />}
-            action={() => props.switchTheme()}
+            name={<TfiTwitterAlt />}
+            action={handleButtonClick}
+          />
+        </Style.Buttons>
+
+        <Style.Buttons>
+          <Button
+            name={<IoLogoVk />}
+            action={handleButtonClick}
           />
         </Style.Buttons>
 
         
 
       </Style.Content>
+      2023 Unicorn Entertainment
     </Style.Header>
   );
 };
-export default Header;
+export default Footer;

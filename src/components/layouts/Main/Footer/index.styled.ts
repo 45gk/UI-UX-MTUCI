@@ -1,9 +1,10 @@
 import styled from 'styled-components';
 
 export const Header = styled.header`
+    flex-direction: column;    
     display: flex; 
     width: 100%;
-    // min-height: 100px;
+    min-height: 100px;
     align-items: center;
     justify-content: center;
     color: ${props => props.theme.textColor};
@@ -13,12 +14,12 @@ export const Header = styled.header`
     position: sticky;
     overflow: hidden;
     z-index: 50;
-    // @media (max-width: 768px) and (min-width: 576px)  { 
-    //     min-height: 60px;
-    // }
-    // @media (max-width: 576px)  {
-    //     min-height: 60px;
-    // }
+    @media (max-width: 768px) and (min-width: 576px)  { 
+        min-height: 60px;
+    }
+    @media (max-width: 576px)  {
+        min-height: 60px;
+    }
 `;
 
 export const Content = styled.div`
@@ -88,12 +89,13 @@ export const Text = styled.div`
     padding: 0px 20px;
     background-color: ${props => props.theme.backgroundColor};
     box-sizing: border-box;
-
+    text-align: center;
     @media  (min-width: 872px)  {
         width: 100%;
     }
     @media  (max-width: 872px)  {
-        display: none;
+        width: 0%;display: none;
+
 `;
 
 
@@ -110,7 +112,10 @@ export const Subscribe_button = styled.button`{
   
   `;
 
-
-  //.subscribe-button:hover {
- //   background-color: #0056b3;
- // }
+  export const Container = styled.div`
+  {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  `;
