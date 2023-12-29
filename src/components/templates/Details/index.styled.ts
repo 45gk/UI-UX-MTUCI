@@ -277,12 +277,12 @@ export const CommentTextLabel = styled.div`
 
 
 export const Comments = styled.div`
-  {
+  
     background-color: #f0f0f0; 
     padding: 20px;
     margin-bottom: 20px;
     border-radius: 5px;
-  }
+  
   `;
 
   export const LitTitle = styled.div`
@@ -300,4 +300,17 @@ export const SuperTitle = styled.div`
     letter-spacing: 1px;
     font-weight: 500;
 `;
+
+export const CButton = styled.button`
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
+  
+  
+  
+  `;
 

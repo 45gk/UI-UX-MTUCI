@@ -97,7 +97,7 @@ export const Text = styled.div`
 `;
 
 
-export const Subscribe_button = styled.button`{
+export const Subscribe_button = styled.button`
     background-color: #007bff;
     color: #ffffff;
     border: none;
@@ -105,12 +105,14 @@ export const Subscribe_button = styled.button`{
     font-size: 16px;
     padding: 10px 20px;
     transition: background-color 0.3s ease;
-  }
-  
+    @media  (min-width: 872px)  {
+        width: 100%;
+    }
+    @media  (max-width: 872px)  {
+        display: none;
+    
   
   `;
 
 
-  //.subscribe-button:hover {
- //   background-color: #0056b3;
- // }
+  //.
